@@ -4,7 +4,7 @@ LINFLAGS=   -ldl -pthread $(CFLAGS)
 all: src/control.cpp src/http.cpp src/main.cpp
 	g++ -o bin/refin $^ -lmongoose -Llib
 
-mongoose: src/mongoose/mongoose.c libdir lib/libmongoose.so
+so: src/mongoose/mongoose.c libdir lib/libmongoose.so
 	$(CC) src/mongoose/mongoose.c -shared -fPIC -fpic -o lib/libmongoose.so $(LINFLAGS) 
 
 libdir: lib 
